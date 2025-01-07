@@ -1,4 +1,4 @@
-# README for SuperSecure Note Maker App
+# SuperSecure Note Maker App
 
 ## Overview
 

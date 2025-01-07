@@ -1,4 +1,4 @@
-# Setup Guide for SuperSecure Bank
+# SuperSecure Bank App
 
 ## Overview
 
