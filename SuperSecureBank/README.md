@@ -14,14 +14,15 @@ The **SuperSecure Bank** is a demonstration application created by **DarkRelay S
      - `bank_server.py`
      - `client.py`
      - `banking.service`
-     - `install.sh`
-     - `uninstall.sh`
+     - `install_supersecure_bank.sh`
+     - `uninstall_supersecure_bank.sh`
 
 2. **Run the Installation Script**
 
    - Execute the installation script:
      ```bash
-     sudo bash install.sh
+     chmod +x ./*.sh
+     sudo bash install_supersecure_bank.sh
      ```
    - The script will:
      - Copy the necessary files to `/usr/local/banking_simulator`.
@@ -50,7 +51,7 @@ The **SuperSecure Bank** is a demonstration application created by **DarkRelay S
 1. **Run the Uninstall Script**
    - Execute the uninstall script:
      ```bash
-     sudo bash uninstall.sh
+     sudo bash uninstall_supersecure_bank.sh
      ```
    - This will:
      - Stop and remove the service.
