@@ -59,7 +59,7 @@ The **SuperSecure Bank** is a demonstration application created by **DarkRelay S
 
 ---
 
-# README: Planned Vulnerabilities
+# Planned Vulnerabilities
 
 The Banking Transaction Simulator contains deliberate vulnerabilities for learning purposes:
 
