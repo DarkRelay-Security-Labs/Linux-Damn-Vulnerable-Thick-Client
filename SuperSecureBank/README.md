@@ -71,15 +71,11 @@ The Banking Transaction Simulator contains deliberate vulnerabilities for learni
 
    - Account data is stored in `/var/log/account_data.json` with world-write permissions (`666`), enabling unauthorized users to modify balances or passkeys.
 
-3. **Directory Permissions**
-
-   - The installation directory is configured with `777` permissions, allowing unauthorized modifications to application files.
-
-4. **Lack of Input Validation**
+3. **Lack of Input Validation**
 
    - The server accepts data from the client without rigorous validation, exposing it to potential injection attacks.
 
-5. **Passkey Vulnerabilities**
+4. **Passkey Vulnerabilities**
 
    - Account passkeys are stored in plaintext, making them susceptible to unauthorized access if the data file is compromised.
 
