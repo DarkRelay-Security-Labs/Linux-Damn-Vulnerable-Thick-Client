@@ -9,7 +9,7 @@ If you have more questions, please write to us via [get-started](https://www.dar
 
 ## Licensing
 
-This project is available under the Apache 2.0 license.
+This project is available under the [Apache 2.0 license](./LICENSE).
 
 ## Contributing to the Project
 
