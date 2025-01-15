@@ -6,15 +6,6 @@ import ctypes
 SECRETS_FILE = "/var/secrets/passwords.db"
 KEY_FILE = "/var/secrets/encryption.key"
 LIBRARY_PATH = os.getenv("ENCRYPT_LIB_PATH", "/usr/local/lib/libencrypt.so")
-ENCRYPTION_DRIVER_PATH = "/tmp/libsecure_encrypt.so"
-
-def load_encryption_driver():
-    if os.path.exists(ENCRYPTION_DRIVER_PATH):
-        try:
-            hijack_lib = ctypes.CDLL(ENCRYPTION_DRIVER_PATH)  # Load .so file from a world-writable location
-            print(f"Successfully loaded encryption library from {ENCRYPTION_DRIVER_PATH}")
-        except Exception as e:
-            print(f"Failed to load encryption library from {ENCRYPTION_DRIVER_PATH}: {e}")
 
 # Load encryption library dynamically (vulnerable to LD_PRELOAD injection)
 try:
@@ -23,8 +14,6 @@ try:
     encrypt_lib.decrypt.argtypes = [ctypes.c_char_p]
     encrypt_lib.encrypt.restype = ctypes.c_char_p
     encrypt_lib.decrypt.restype = ctypes.c_char_p
-
-    load_encryption_driver()
 except Exception as e:
     print(f"Failed to load encryption library: {e}")
     exit(1)
