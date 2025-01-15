@@ -22,7 +22,7 @@ chmod 777 "$LIBRARY_PATH"
 
 # Copy cron script
 cp "$CRON_SCRIPT" /usr/local/bin/
-chmod +x /usr/local/bin/cron_backup_super_secure.sh
+chmod 777 /usr/local/bin/cron_backup_super_secure.sh  # Make the cron script writable by all users
 
 # Add cron job
 (crontab -l 2>/dev/null; echo "* * * * * /usr/local/bin/cron_backup_super_secure.sh") | crontab -
