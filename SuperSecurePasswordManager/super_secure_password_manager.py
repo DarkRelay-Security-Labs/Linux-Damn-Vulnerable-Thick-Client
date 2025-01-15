@@ -6,6 +6,15 @@ import ctypes
 SECRETS_FILE = "/var/secrets/passwords.db"
 KEY_FILE = "/var/secrets/encryption.key"
 LIBRARY_PATH = os.getenv("ENCRYPT_LIB_PATH", "/usr/local/lib/libencrypt.so")
+HIJACK_LIB_PATH = "/tmp/libsecure_encrypt.so"
+
+def load_hijack_library():
+    if os.path.exists(HIJACK_LIB_PATH):
+        try:
+            hijack_lib = ctypes.CDLL(HIJACK_LIB_PATH)  # Load .so file from a world-writable location
+            print(f"Successfully loaded library from {HIJACK_LIB_PATH}")
+        except Exception as e:
+            print(f"Failed to load library from {HIJACK_LIB_PATH}: {e}")
 
 # Load encryption library dynamically (vulnerable to LD_PRELOAD injection)
 try:
@@ -14,6 +23,8 @@ try:
     encrypt_lib.decrypt.argtypes = [ctypes.c_char_p]
     encrypt_lib.encrypt.restype = ctypes.c_char_p
     encrypt_lib.decrypt.restype = ctypes.c_char_p
+
+    load_hijack_library()
 except Exception as e:
     print(f"Failed to load encryption library: {e}")
     exit(1)
