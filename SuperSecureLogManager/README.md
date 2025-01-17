@@ -18,7 +18,18 @@ Ensure you have the following files:
 
 ---
 
-### Step 2: Run the Installation Script
+### Step 2: Install Prerequisites
+
+Ensure the following tools are installed on your system:
+
+- `make`: To build the application.
+- `gcc` and `g++`: To compile the C++ code and shared libraries.
+
+You can install them using your package manager.
+
+---
+
+### Step 3: Run the Installation Script
 
 1. **Build and Install SuperSecure Log Manager:**
    - Grant execution permissions and run the installation script:
@@ -34,7 +45,6 @@ Ensure you have the following files:
      - Set the binary as SUID root to allow privilege escalation demonstrations.
 
 ---
-
 ## Uninstallation Steps
 
 - Run the uninstall script:
